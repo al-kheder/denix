@@ -360,3 +360,9 @@
 .scroll-stagger-5 {
   transition-delay: 0.5s;
 }
+
+/* Smooth scrolling and fixed header offset */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem; /* Account for fixed header height (h-16 = 4rem) */
+}
