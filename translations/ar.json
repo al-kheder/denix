@@ -2,14 +2,14 @@
   "nav": {
     "product": "المنتج",
     "solutions": "الحلول",
-    "pricing": "الأسعار",
+    "pricing": "التسعير",
     "customers": "العملاء",
     "partners": "الشركاء",
     "community": "المجتمع"
   },
   "buttons": {
     "free_trial": "تجربة مجانية",
-    "book_appointment": "حجز موعد",
+    "book_appointment": "احجز موعد",
     "search": "بحث",
     "get_started": "ابدأ الآن",
     "learn_more": "اعرف المزيد",
@@ -28,13 +28,22 @@
     "feature_2_desc": "من خلال تكامل الذكاء الاصطناعي وعميل البريد والتواصل الداخلي وإدارة المشاريع وإدارة الموظفين والمزيد",
     "feature_3_title": "النمو والتوسع:",
     "feature_3_desc": "العمل على الشركة مع الإمكانيات التطبيقية العديدة لنظامنا",
-    "feature_4_title": "تدريب سريع:",
+    "feature_4_title": "التدريب السريع:",
     "feature_4_desc": "سطح مكتب حديث مع وظائف مبتكرة لسهولة الاستخدام والكفاءة على جميع الأجهزة"
   },
+  "recognition": {
+    "title": "دينكس في المقدمة للابتكار التجاري",
+    "description_1": "يعترف قادة الصناعة بـ",
+    "denix_highlight": "دينكس",
+    "description_2": "كحل رائد لنقاط البيع السحابية وإدارة الأعمال - يقدم التميز في التكنولوجيا ورضا العملاء. موثوق به من قبل الشركات عبر صناعات متعددة لنهجه الشامل في أتمتة الأعمال.",
+    "learn_more": "اعرف المزيد",
+    "award_title": "اعتراف الصناعة ٢٠٢٥",
+    "award_subtitle": "حل نقاط البيع السحابي الرائد"
+  },
   "product": {
-    "business_software": "برمجيات عملك",
+    "business_software": "برنامج عملك",
     "usability": "سهولة الاستخدام",
-    "usability_desc": "بيئة عمل حديثة وبديهية في سطح المكتب الويب",
+    "usability_desc": "بيئة عمل حديثة وبديهية في سطح المكتب على الويب",
     "modern_work": "العمل الحديث",
     "modern_work_desc": "بيئة عمل حديثة وبديهية",
     "productive_everywhere": "إنتاجية في كل مكان",
@@ -42,75 +51,52 @@
     "ecosystem": "نظام دينكس البيئي",
     "ecosystem_desc": "نظام متجر متعدد متكامل",
     "ai_support": "دعم الذكاء الاصطناعي",
-    "ai_support_desc": "سحابة، متجر، تكاملات"
+    "ai_support_desc": "السحابة، المتجر، التكامل"
   },
   "company": {
     "your_company": "شركتك",
-    "efficiency": "تحسين الكفاءة",
+    "efficiency": "تعزيز الكفاءة",
     "efficiency_desc": "نظام تخطيط موارد المؤسسات مع الذكاء الاصطناعي",
-    "growth": "نمو الشركة",
-    "growth_desc": "بيئة عمل حديثة وبديهية",
-    "customer_focus": "التركيز على العملاء",
-    "customer_focus_desc": "نظام تخطيط موارد المؤسسات مع الذكاء الاصطناعي",
-    "employee_satisfaction": "رضا الموظفين",
-    "employee_satisfaction_desc": "نظام تخطيط موارد المؤسسات مع الذكاء الاصطناعي",
-    "cost_optimization": "تحسين التكاليف",
-    "cost_optimization_desc": "التواصل (البريد الإلكتروني، الدردشة، الاستفسارات)",
-    "data_analysis": "تحليل البيانات",
-    "data_analysis_desc": "التواصل (البريد الإلكتروني، الدردشة، الاستفسارات)"
+    "process_automation": "أتمتة العمليات",
+    "process_automation_desc": "نظام تخطيط موارد المؤسسات مع الذكاء الاصطناعي",
+    "innovation": "الابتكار",
+    "innovation_desc": "أتمتة العمليات",
+    "ai_integration": "تكامل الذكاء الاصطناعي",
+    "ai_integration_desc": "الابتكار"
   },
-  "start": {
-    "your_start": "بدايتك",
-    "easy_intro": "مقدمة سهلة",
-    "easy_intro_desc": "التواصل (البريد الإلكتروني، الدردشة، الاستفسارات)",
-    "switch_to_denix": "التحويل إلى دينكس",
-    "switch_to_denix_desc": "التواصل (البريد الإلكتروني، الدردشة، الاستفسارات)",
-    "video_courses": "دورات فيديو ومساعدة",
-    "video_courses_desc": "التواصل (البريد الإلكتروني، الدردشة، الاستفسارات)",
-    "maintenance": "الصيانة والتحديثات",
-    "maintenance_desc": "التواصل (البريد الإلكتروني، الدردشة، الاستفسارات)",
-    "scaling": "التوسع",
-    "scaling_desc": "التواصل (البريد الإلكتروني، الدردشة، الاستفسارات)"
+  "integrations": {
+    "your_integrations": "تكاملاتك",
+    "cloud": "السحابة",
+    "cloud_desc": "حلول السحابة",
+    "shop": "المتجر",
+    "shop_desc": "حلول المتجر",
+    "integrations": "التكامل",
+    "integrations_desc": "حلول التكامل",
+    "ai": "الذكاء الاصطناعي",
+    "ai_desc": "حلول الذكاء الاصطناعي"
   },
-  "solutions": {
-    "by_use_case": "حسب حالة الاستخدام",
-    "office_software": "برمجيات المكتب",
-    "office_software_desc": "بيئة عمل حديثة وبديهية في سطح المكتب الويب",
-    "erp_for_midsize": "نظام تخطيط موارد المؤسسات للشركات المتوسطة",
-    "erp_for_midsize_desc": "بيئة عمل حديثة وبديهية في سطح المكتب الويب",
-    "wms_logistics": "نظام إدارة المستودعات - اللوجستيات والشحن",
-    "wms_logistics_desc": "سحابة، متجر، تكاملات",
-    "kanban_management": "إدارة المهام كانبان",
-    "kanban_management_desc": "سحابة، متجر، تكاملات",
-    "amazon_fba": "أمازون FBA والمستودع الخاص",
-    "amazon_fba_desc": "بيئة عمل حديثة وبديهية في سطح المكتب الويب",
-    "retail_online": "متجر بالتجزئة مع التجارة الإلكترونية",
-    "retail_online_desc": "نظام متجر متعدد متكامل"
-  },
-  "common": {
-    "loading": "جاري التحميل...",
-    "error": "خطأ",
-    "success": "نجح",
-    "cancel": "إلغاء",
-    "save": "حفظ",
-    "edit": "تعديل",
-    "delete": "حذف",
-    "close": "إغلاق",
-    "open": "فتح"
+  "contact": {
+    "contact_us": "اتصل بنا",
+    "get_in_touch": "تواصل معنا",
+    "contact_description": "هل لديك أسئلة؟ نحن هنا للمساعدة",
+    "phone": "الهاتف",
+    "email": "البريد الإلكتروني",
+    "address": "العنوان"
   },
   "footer": {
-    "company": "الشركة",
-    "about_us": "من نحن",
-    "careers": "الوظائف",
-    "press": "الصحافة",
-    "contact": "اتصل بنا",
-    "support": "الدعم",
-    "help_center": "مركز المساعدة",
-    "documentation": "التوثيق",
-    "status": "الحالة",
-    "legal": "قانوني",
+    "tagline": "حل شامل لنمو عملك",
     "privacy": "سياسة الخصوصية",
-    "terms": "شروط الخدمة",
-    "cookies": "سياسة ملفات تعريف الارتباط"
+    "terms": "الشروط والأحكام",
+    "support": "الدعم",
+    "documentation": "التوثيق"
+  },
+  "theme": {
+    "light": "فاتح",
+    "dark": "داكن",
+    "system": "النظام"
+  },
+  "language": {
+    "english": "English",
+    "arabic": "العربية"
   }
 }
