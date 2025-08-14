@@ -49,6 +49,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
   const { theme, setTheme } = useTheme();
   const { language, setLanguage, t } = useLanguage();
 
@@ -66,6 +67,15 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (hoverTimeout) {
+        clearTimeout(hoverTimeout);
+      }
+    };
+  }, [hoverTimeout]);
 
   const navigation: NavigationItem[] = [
     {
@@ -208,6 +218,20 @@ export default function Header() {
     },
   ];
 
+  const handleMouseEnter = (item: string) => {
+    if (hoverTimeout) {
+      clearTimeout(hoverTimeout);
+      setHoverTimeout(null);
+    }
+    setActiveDropdown(item);
+  };
+
+  const handleMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 300);
+    setHoverTimeout(timeout);
+  };
   const toggleDropdown = (item: string) => {
     setActiveDropdown(activeDropdown === item ? null : item);
   };
@@ -287,12 +311,12 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             {navigation.map((item) => (
-              <div key={item.title} className="relative group">
+              <div key={item.title} className="relative group" onMouseLeave={handleMouseLeave}>
                 {item.submenu ? (
                   <>
                     <button
                       className="flex items-center space-x-1 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors"
-                      onClick={() => toggleDropdown(item.title)}
+                      onMouseEnter={() => handleMouseEnter(item.title)}
                     >
                       <span>{item.title}</span>
                       <ChevronDown
@@ -304,7 +328,7 @@ export default function Header() {
 
                     {/* Mega Menu */}
                     {activeDropdown === item.title && (
-                      <div className="absolute top-full left-0 w-screen max-w-4xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-xl rounded-lg mt-2">
+                      <div className="absolute top-full left-0 w-screen max-w-4xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-xl rounded-lg mt-2" onMouseEnter={() => handleMouseEnter(item.title)}>
                         <div className="grid grid-cols-3 gap-8 p-8">
                           {item.submenu.sections.map((section) => (
                             <div key={section.title}>
@@ -469,13 +493,6 @@ export default function Header() {
         )}
       </div>
 
-      {/* Overlay to close dropdowns */}
-      {activeDropdown && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-25 z-40"
-          onClick={() => setActiveDropdown(null)}
-        />
-      )}
     </header>
   );
 }
