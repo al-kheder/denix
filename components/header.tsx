@@ -4,6 +4,11 @@ import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { useLanguage } from "./language-provider";
 import Link from "next/link";
+import DropdownMenu, {
+  DropdownItem,
+  DropdownSection,
+  DropdownMenuProps,
+} from "./dropdown-menu";
 import {
   Sun,
   Moon,
@@ -26,21 +31,11 @@ import {
   LucideIcon,
 } from "lucide-react";
 
-interface SubmenuItem {
-  title: string;
-  description: string;
-  href: string;
-  icon: LucideIcon;
-}
-
 interface NavigationItem {
   title: string;
   href?: string;
   submenu?: {
-    sections: {
-      title: string;
-      items: SubmenuItem[];
-    }[];
+    sections: DropdownSection[];
   };
 }
 
@@ -311,7 +306,11 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             {navigation.map((item) => (
-              <div key={item.title} className="relative group" onMouseLeave={handleMouseLeave}>
+              <div
+                key={item.title}
+                className="relative group"
+                onMouseLeave={handleMouseLeave}
+              >
                 {item.submenu ? (
                   <>
                     <button
@@ -327,42 +326,12 @@ export default function Header() {
                     </button>
 
                     {/* Mega Menu */}
-                    {activeDropdown === item.title && (
-                      <div className="absolute top-full left-0 w-screen max-w-4xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-xl rounded-lg mt-2" onMouseEnter={() => handleMouseEnter(item.title)}>
-                        <div className="grid grid-cols-3 gap-8 p-8">
-                          {item.submenu.sections.map((section) => (
-                            <div key={section.title}>
-                              <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-4">
-                                {section.title}
-                              </h3>
-                              <ul className="space-y-3">
-                                {section.items.map((subItem) => {
-                                  const IconComponent = subItem.icon;
-                                  return (
-                                    <li key={subItem.title}>
-                                      <a
-                                        href={subItem.href}
-                                        className="flex items-start space-x-3 p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
-                                      >
-                                        <IconComponent className="w-5 h-5 text-blue-600 dark:text-blue-400 mt-0.5 flex-shrink-0" />
-                                        <div>
-                                          <div className="text-sm font-medium text-gray-900 dark:text-white">
-                                            {subItem.title}
-                                          </div>
-                                          <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                                            {subItem.description}
-                                          </div>
-                                        </div>
-                                      </a>
-                                    </li>
-                                  );
-                                })}
-                              </ul>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
+                    {/* Reusable DropdownMenu */}
+                    <DropdownMenu
+                      sections={item.submenu.sections}
+                      isOpen={activeDropdown === item.title}
+                      onMouseEnter={() => handleMouseEnter(item.title)}
+                    />
                   </>
                 ) : (
                   <a
@@ -492,7 +461,6 @@ export default function Header() {
           </div>
         )}
       </div>
-
     </header>
   );
 }
